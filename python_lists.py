@@ -6,14 +6,38 @@
 # You've been given a list of numerical grades from a class exam. You need to process and analyze these grades.
 
 # Task 1: Given the list of grades:
-
-# grades = [85, 90, 78, 88, 76, 95, 89, 80, 72, 93]
 # Sort the grades in descending order and display the sorted list.
+grades = [85, 90, 78, 88, 76, 95, 89, 80, 72, 93]
+# print(sorted(grades))
+
 
 # Task 2: Calculate the average grade and display it.
 
-# Task 3: Replace any grade below 80 with the value Failed.
+# def average_calculator(lists):
+#     listLength = len(lists)
+#     print(listLength)
+#     if ( len(lists) == 0):
+#         return 0
+#     else:
+#         firstElement = lists.pop(0)
+#         totalSum = firstElement + average_calculator(lists)
+#         return totalSum / listLength
+# print(average_calculator(grades))
 
+def average_calculator(lists):
+    totalSum = sum(grades)
+    average = totalSum / len(lists)
+    print(average)
+# average_calculator(grades)
+
+# Task 3: Replace any grade below 80 with the value Failed.
+def replaceWithFailed(lists):
+    for element in lists:
+        if (element < 80):
+            lessThan80 = lists.index(element)
+            lists[lessThan80] = 'Failed'
+    print(lists)
+replaceWithFailed(grades)
 # 2. Advanced List Methods and Identity Operators
 # Objective:
 # The aim of this assignment is to delve deeper into list methods and understand the nuances of identity operators.
