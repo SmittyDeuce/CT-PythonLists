@@ -37,7 +37,8 @@ def replaceWithFailed(lists):
             lessThan80 = lists.index(element)
             lists[lessThan80] = 'Failed'
     print(lists)
-replaceWithFailed(grades)
+# replaceWithFailed(grades)
+
 # 2. Advanced List Methods and Identity Operators
 # Objective:
 # The aim of this assignment is to delve deeper into list methods and understand the nuances of identity operators.
@@ -47,13 +48,26 @@ replaceWithFailed(grades)
 
 # Task 1: Given the two lists:
 
-# submitted = ["Alice", "Bob", "Charlie", "David"]
-# attended = ["Charlie", "Eve", "Alice", "Frank"]
+submitted = ["Alice", "Bob", "Charlie", "David"]
+attended = ["Charlie", "Eve", "Alice", "Frank"]
 # Find out which students both submitted their assignments and attended the class.
+# for name in submitted:
+#     if name in attended:
+#         print(f'{name} has submitted their assignments and attended class')
 
 # Task 2: Check if the two lists are identical in terms of their content, regardless of order.
-
+# if sorted(submitted) == sorted(attended):
+#     print(True)
+# else:
+#     print(False)
+        
 # Task 3: Using list methods, remove any student from the attended list who did not submit their assignment.
+def removeStudent (list1, list2):
+    for student in list1:
+        if (student in list1) and (student not in list2):
+            list1.remove(student)
+    print(list1)
+# removeStudent(attended, submitted)
 
 # 3. Advanced Slicing Techniques
 # Objective:
