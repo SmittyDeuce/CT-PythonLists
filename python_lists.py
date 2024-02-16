@@ -114,9 +114,16 @@ def evenNumbers (list):
 # evenNumbers(numbers)
 
 # Task 2: Use a list comprehension to create a new list containing numbers greater than 5.
-
+def greaterThan5(list):
+    over5 = []
+    for num in list:
+        if num > 5:
+            over5.append(num)
+    print(over5)
+# greaterThan5(numbers)
 
 # Task 3: Check if the number 7 is in the original numbers list.
+# print(int(7) in numbers)
 
 # 5. Deep Dive into Python Lists
 # Objective:
