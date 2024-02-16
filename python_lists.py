@@ -78,12 +78,21 @@ def removeStudent (list1, list2):
 
 # Task 1: Given the list of temperatures:
 
-# temperatures = [72, 75, 78, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106]
+temperatures = [72, 75, 78, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106]
 # Extract the temperatures for the second week (7 days) of the month.
-#  try gettting idx from elements 8-14 and print those ones
-# Task 2: Extract all the temperatures above 100.
+# print(temperatures[7:14])
 
+# Task 2: Extract all the temperatures above 100.
+over100 = []
+for temp in temperatures:
+    if temp > 100:
+        over100.append(temp)
+# print(over100)
 # Task 3: Reverse the list and extract temperatures from the 5th to the 10th day of the reversed list.
+reversedTemps = temperatures.copy()
+reversedTemps.reverse()
+
+# print(reversedTemps[4:9])
 
 # 4. List Comprehensions and Membership Operators
 # Objective:
@@ -94,10 +103,18 @@ def removeStudent (list1, list2):
 
 # Task 1: Given the list:
 
-# numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 # Use a list comprehension to create a new list containing only even numbers.
+def evenNumbers (list):
+    evens = []
+    for num in list:
+        if num % 2 == 0:
+            evens.append(num)
+    print(evens)
+# evenNumbers(numbers)
 
 # Task 2: Use a list comprehension to create a new list containing numbers greater than 5.
+
 
 # Task 3: Check if the number 7 is in the original numbers list.
 
