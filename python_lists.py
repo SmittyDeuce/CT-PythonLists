@@ -8,7 +8,8 @@
 # Task 1: Given the list of grades:
 # Sort the grades in descending order and display the sorted list.
 grades = [85, 90, 78, 88, 76, 95, 89, 80, 72, 93]
-# print(sorted(grades))
+
+print(sorted(grades))
 
 
 # Task 2: Calculate the average grade and display it.
@@ -24,11 +25,13 @@ grades = [85, 90, 78, 88, 76, 95, 89, 80, 72, 93]
 #         return totalSum / listLength
 # print(average_calculator(grades))
 
+#  i tried to do recursion up there i feel like i was sooooo close but yet so far
+
 def average_calculator(lists):
     totalSum = sum(grades)
     average = totalSum / len(lists)
     print(average)
-# average_calculator(grades)
+average_calculator(grades)
 
 # Task 3: Replace any grade below 80 with the value Failed.
 def replaceWithFailed(lists):
@@ -37,7 +40,7 @@ def replaceWithFailed(lists):
             lessThan80 = lists.index(element)
             lists[lessThan80] = 'Failed'
     print(lists)
-# replaceWithFailed(grades)
+replaceWithFailed(grades)
 
 # 2. Advanced List Methods and Identity Operators
 # Objective:
@@ -51,15 +54,15 @@ def replaceWithFailed(lists):
 submitted = ["Alice", "Bob", "Charlie", "David"]
 attended = ["Charlie", "Eve", "Alice", "Frank"]
 # Find out which students both submitted their assignments and attended the class.
-# for name in submitted:
-#     if name in attended:
-#         print(f'{name} has submitted their assignments and attended class')
+for name in submitted:
+    if name in attended:
+        print(f'{name} has submitted their assignments and attended class')
 
 # Task 2: Check if the two lists are identical in terms of their content, regardless of order.
-# if sorted(submitted) == sorted(attended):
-#     print(True)
-# else:
-#     print(False)
+if sorted(submitted) == sorted(attended):
+    print(True)
+else:
+    print(False)
         
 # Task 3: Using list methods, remove any student from the attended list who did not submit their assignment.
 def removeStudent (list1, list2):
@@ -67,7 +70,7 @@ def removeStudent (list1, list2):
         if (student in list1) and (student not in list2):
             list1.remove(student)
     print(list1)
-# removeStudent(attended, submitted)
+removeStudent(attended, submitted)
 
 # 3. Advanced Slicing Techniques
 # Objective:
@@ -77,22 +80,22 @@ def removeStudent (list1, list2):
 # You have a list of daily temperatures for a month, and you'd like to extract specific data from it.
 
 # Task 1: Given the list of temperatures:
-
 temperatures = [72, 75, 78, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106]
 # Extract the temperatures for the second week (7 days) of the month.
-# print(temperatures[7:14])
+print(temperatures[7:14])
 
 # Task 2: Extract all the temperatures above 100.
 over100 = []
 for temp in temperatures:
     if temp > 100:
         over100.append(temp)
-# print(over100)
+print(over100)
+        
 # Task 3: Reverse the list and extract temperatures from the 5th to the 10th day of the reversed list.
 reversedTemps = temperatures.copy()
 reversedTemps.reverse()
 
-# print(reversedTemps[4:9])
+print(reversedTemps[4:9])
 
 # 4. List Comprehensions and Membership Operators
 # Objective:
@@ -102,7 +105,6 @@ reversedTemps.reverse()
 # You have a list of numbers, and you'd like to generate a new list based on certain conditions.
 
 # Task 1: Given the list:
-
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 # Use a list comprehension to create a new list containing only even numbers.
 def evenNumbers (list):
@@ -111,7 +113,7 @@ def evenNumbers (list):
         if num % 2 == 0:
             evens.append(num)
     print(evens)
-# evenNumbers(numbers)
+evenNumbers(numbers)
 
 # Task 2: Use a list comprehension to create a new list containing numbers greater than 5.
 def greaterThan5(list):
@@ -120,10 +122,10 @@ def greaterThan5(list):
         if num > 5:
             over5.append(num)
     print(over5)
-# greaterThan5(numbers)
+greaterThan5(numbers)
 
 # Task 3: Check if the number 7 is in the original numbers list.
-# print(int(7) in numbers)
+print(int(7) in numbers)
 
 # 5. Deep Dive into Python Lists
 # Objective:
@@ -131,15 +133,31 @@ def greaterThan5(list):
 
 # Problem Statement:
 # You're organizing a school event, and you have lists containing student names, their grades, and the activities they're interested in.
-
 # Task 1: Given the lists:
+students = ["John", "Doe", "Jane", "Smith"]
+grades = [85, 90, 78, 88]
+activities = ["Football", "Music", "Art", "Dance"]
 
-# students = ["John", "Doe", "Jane", "Smith"]
-# grades = [85, 90, 78, 88]
-# activities = ["Football", "Music", "Art", "Dance"]
 # Create a new list where each element is a dictionary with keys name, grade, and activity and the corresponding values from the provided lists.
-
+dictionaryList = []
+for idx in range(len(students)):
+    obj = {
+        'name': students[idx],
+        'grade': grades[idx],
+        'activity': activities[idx]
+    }
+    dictionaryList.append(obj)
+print(dictionaryList)
+    
 # Task 2: Filter out students who have grades below 80.
+higherThan80 = []
+for student in dictionaryList:
+    if student['grade'] > 80:
+        higherThan80.append(student)
+print(higherThan80)
 
 # Task 3: For the remaining students, add a new key-value pair in their dictionary: "status": "Passed".
+for student in higherThan80:
+    student['status'] = 'Passed'
 
+print(higherThan80)
